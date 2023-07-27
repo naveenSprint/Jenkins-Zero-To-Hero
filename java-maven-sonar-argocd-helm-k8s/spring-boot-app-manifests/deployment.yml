@@ -18,4 +18,4 @@ spec:
       - name: spring-boot-app
         image: mnaveenk85/ultimate-cicd:3
         ports:
-        - containerPort: 8090
+        - containerPort: 8080
