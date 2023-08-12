@@ -29,11 +29,6 @@ pipeline {
         }
       }
     }
-    stage('Upload artifact to JFROG') {
-      steps {
-          sh 'curl -uadmin:cmVmdGtuOjAxOjE3MjMzNTg4NzA6Rk5SeHVNN2RWd2s1Y21CU0NUVFNmU3l0RnZ4 -T /var/lib/jenkins/workspace/ci-cd-project/java-maven-sonar-argocd-helm-k8s/spring-boot-app/target/spring-boot-web.jar "http://192.168.56.12:8081/artifactory/artifactory-build-info/${BUILD_NUMBER}/spring-boot-web.jar'
-        }
-    }
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "mnaveenk85/ultimate-cicd:${BUILD_NUMBER}"
